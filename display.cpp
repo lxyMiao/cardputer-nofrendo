@@ -113,11 +113,11 @@ extern "C" void display_init()
         frame_line_pixels = frame_width / 2;
     }
 }
-static uint16_t _lcd_buffer[135][240];
+static uint8_t _lcd_buffer[240];
 extern "C" void display_write_frame(const uint8_t *data[])
 {
     
-    //M5Cardputer.Display.startWrite();
+    M5Cardputer.Display.startWrite();
    // M5Cardputer.Display.setAddrWindow(frame_x, frame_y, frame_width, frame_height);
     //Serial.println("flush screen");
    
@@ -126,11 +126,12 @@ extern "C" void display_write_frame(const uint8_t *data[])
     {
         for (size_t j = 0; j < 240; j++)
         {
-            _lcd_buffer[i][j]=myPalette[data[i*NES_SCREEN_HEIGHT/135][j*NES_SCREEN_WIDTH/240]];
+           _lcd_buffer[j]=data[i*NES_SCREEN_HEIGHT/135][j*NES_SCREEN_WIDTH/240];
         }
+        M5Cardputer.Display.writeIndexedPixels(_lcd_buffer,reinterpret_cast<lgfx::v1::rgb565_t*>(myPalette),240);
     }
-    M5Cardputer.Display.pushImageDMA(0,0,240,135,reinterpret_cast<lgfx::v1::rgb565_t*>(_lcd_buffer));
-    
+   // M5Cardputer.Display.pushImageDMA(0,0,240,135,reinterpret_cast<lgfx::v1::rgb565_t*>(_lcd_buffer));
+    M5Cardputer.Display.endWrite();
 
 }
 
