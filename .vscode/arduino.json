@@ -1,0 +1,8 @@
+{
+    "configuration": "JTAGAdapter=default,PSRAM=disabled,FlashMode=qio,FlashSize=4M,LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=default,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none",
+    "output": "./build",
+    "board": "m5stack:esp32:m5stack_cardputer",
+    "sketch": "esp32-nofrendo.ino",
+    "port": "COM5",
+    "programmer": "esptool"
+}
