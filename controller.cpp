@@ -173,6 +173,7 @@ extern "C" uint32_t controller_read_input()
        if(M5Cardputer.Keyboard.isKeyPressed( 'l')){// B
         value ^= (1 << 7);
        }
+      /*
        if(M5Cardputer.Keyboard.isKeyPressed( 'o')){// X
         value ^= (1 << 8);
        }
@@ -180,6 +181,7 @@ extern "C" uint32_t controller_read_input()
         value ^= (1 << 9);
         
       }
+      */
     }
   //}
 
