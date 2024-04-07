@@ -3,7 +3,7 @@
  */
 
 
-#define USB_DISK
+//#define USB_DISK
 //for usb mass storage
 #ifdef USB_DISK
 #include <stdlib.h>

@@ -38,12 +38,24 @@ extern "C" void osd_stopsound()
 extern "C" void do_audio_frame()
 {
 	int left = HW_AUDIO_SAMPLERATE / NES_REFRESH_RATE;
-	int n = DEFAULT_FRAGSIZE;
-	audio_callback(audio_frame, n); //get more data
+	while (left)
+	{
+		int n = DEFAULT_FRAGSIZE;
+		if (n > left)
+			n = left;
+		audio_callback(audio_frame, n); //get more data
+
 		//16 bit mono -> 32-bit (16 bit r+l)
-		//int16_t *mono_ptr = audio_frame + n;
-		//int16_t *stereo_ptr = audio_frame + n + n;
-	M5Cardputer.Speaker.playRaw(audio_frame,n,HW_AUDIO_SAMPLERATE);
+		int16_t *mono_ptr = audio_frame + n;
+		int16_t *stereo_ptr = audio_frame + n + n;
+		
+
+		//size_t i2s_bytes_write;
+		//i2s_write(I2S_NUM_0, (const char *)audio_frame, 4 * n, &i2s_bytes_write, portMAX_DELAY);
+		M5Cardputer.Speaker.playRaw(audio_frame,n,HW_AUDIO_SAMPLERATE);
+		left -= n;
+	}
+	//M5Cardputer.Speaker.playRaw(audio_frame,n,HW_AUDIO_SAMPLERATE);
 
 }
 
