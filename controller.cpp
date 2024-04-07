@@ -174,13 +174,14 @@ extern "C" uint32_t controller_read_input()
         value ^= (1 << 7);
        }
        /*
-       if(M5Cardputer.Keyboard.isKeyPressed( 'o')){// X
+       if(M5Cardputer.Keyboard.isKeyPressed( 'o')){// save
         value ^= (1 << 8);
        }
-       if(M5Cardputer.Keyboard.isKeyPressed('p')){ // Y
+       if(M5Cardputer.Keyboard.isKeyPressed('p')){ // load
         value ^= (1 << 9);
         
-      }*/
+      }
+      */
     }
   //}
 
