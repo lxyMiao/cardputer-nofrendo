@@ -46,8 +46,8 @@ extern "C" void do_audio_frame()
 		audio_callback(audio_frame, n); //get more data
 
 		//16 bit mono -> 32-bit (16 bit r+l)
-		int16_t *mono_ptr = audio_frame + n;
-		int16_t *stereo_ptr = audio_frame + n + n;
+		//int16_t *mono_ptr = audio_frame + n;
+		//int16_t *stereo_ptr = audio_frame + n + n;
 		
 
 		//size_t i2s_bytes_write;

@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "string": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "hw_config.h": "c",
+        "nofconfig.h": "c",
+        "random": "c"
     }
 }
