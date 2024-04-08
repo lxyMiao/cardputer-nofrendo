@@ -4,6 +4,14 @@
         "type_traits": "c",
         "hw_config.h": "c",
         "nofconfig.h": "c",
-        "random": "c"
+        "random": "c",
+        "osd.h": "c",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
     }
 }

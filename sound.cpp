@@ -24,7 +24,7 @@ static int16_t *audio_frame;
 
 extern "C" int osd_init_sound()
 {
-	audio_frame = (int16_t*) NOFRENDO_MALLOC(4 * DEFAULT_FRAGSIZE);
+	audio_frame = (int16_t*) NOFRENDO_MALLOC(2 * DEFAULT_FRAGSIZE);
 	audio_callback = NULL;
 
 	return 0;

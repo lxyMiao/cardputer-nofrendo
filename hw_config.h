@@ -81,8 +81,8 @@
 // #define FILESYSTEM_BEGIN (!SD_MMC.begin(FSROOT, false)) && (!SD_MMC.begin(FSROOT, false)); FS filesystem = SD_MMC;
 /* SD using default SPI settings */
 // #define FILESYSTEM_BEGIN SD.begin(22 /* SS */, SPI, 8000000, FSROOT); FS filesystem = SD;
-/* SD using custom SPI settings */
-#define FILESYSTEM_BEGIN SPIClass spi = SPIClass(HSPI); spi.begin(SD_SPI_SCK_PIN, SD_SPI_MISO_PIN, SD_SPI_MOSI_PIN, SD_SPI_CS_PIN); SD.begin(SD_SPI_CS_PIN, spi, 8000000, FSROOT); FS filesystem = SD;
+/* SD using custom SPI settings */      
+#define FILESYSTEM_BEGIN  SD.begin(SD_SPI_CS_PIN, SPI, 4000000, FSROOT); FS filesystem = SD;
 
 // enable audio
 #define HW_AUDIO
