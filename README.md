@@ -10,4 +10,4 @@ k => A
 
 l => B  
 
-Cardpuer has not enough memory for save and load
+~~Cardpuer has not enough memory for save and load~~
