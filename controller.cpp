@@ -146,8 +146,8 @@ extern "C" uint32_t controller_read_input()
   //Wire.requestFrom(I2C_M5CARDKB_ADDR, 1);
   //while (true)
   //{
-    if (M5Cardputer.Keyboard.isChange())
-    {
+   // if (M5Cardputer.Keyboard.isChange())
+   // {
       //Serial.println("flush key");
        if(M5Cardputer.Keyboard.isKeyPressed(';')){// up
         value ^= (1 << 0);
@@ -183,7 +183,7 @@ extern "C" uint32_t controller_read_input()
         
       }
       
-    }
+    //}
   //}
 
   return value;
